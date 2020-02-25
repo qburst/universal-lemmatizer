@@ -10,12 +10,20 @@ Needs python3 environment with pytorch installed.
 
 See Turku-neural-parser-pipeline documentation at https://turkunlp.github.io/Turku-neural-parser-pipeline/.
 
-## Training new models
+## Training new models  
+
+Inorder to train the model for a new language,  
+
+* Prepare dataset in CONLLU format.  
+* This repo contains training and dev data for malayalm in `data` directory.
+* Update the `config.yaml` file with configuration for new treebank, Refer example provided in `config.yaml`.
 ### Training model for malayalam  
-TODO
+Malayalam configuration are provided under  `ml_tdt` key in `config.yaml`  
+To start training  
 ```
 python train_lemmatizer.py --treebank ml_tdt  
 ```
+To predict lemmas  
 ```
 python predict_lemmas.py --src /path/to/data/ml-test.conllu --model /path/to/model/model_step_*.pt --output out.txt
 
