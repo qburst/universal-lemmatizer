@@ -11,5 +11,12 @@ Needs python3 environment with pytorch installed.
 See Turku-neural-parser-pipeline documentation at https://turkunlp.github.io/Turku-neural-parser-pipeline/.
 
 ## Training new models
-
+### Training model for malayalam  
 TODO
+```
+python train_lemmatizer.py --treebank ml_tdt  
+```
+```
+python predict_lemmas.py --src /path/to/data/ml-test.conllu --model /path/to/model/model_step_*.pt --output out.txt
+
+```
