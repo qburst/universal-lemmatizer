@@ -33,11 +33,12 @@ def transform_token(cols, extra_tag="", xpos=True):
     tags.append("UPOS="+cols[UPOS])
     if xpos:
         tags.append("XPOS="+cols[XPOS])
-    for t in cols[FEAT].split("|"):
-        if t=="_":
-            tags.append("FEAT="+t)
-        else:
-            tags.append(t)
+    # Commenting these lines since the sample data source doesnt contain FEAT col
+    # for t in cols[FEAT].split("|"):
+    #     if t=="_":
+    #         tags.append("FEAT="+t)
+    #     else:
+    #         tags.append(t)
     tags=" ".join(tags)
 
     return " ".join([wordform,tags]), lemma
