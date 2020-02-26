@@ -49,3 +49,20 @@ fi_tdt_art:
   preprocess_parameters: "-src_words_min_frequency 10 -tgt_words_min_frequency 10"
   train_parameters: "-gpuid 0 -dropout 0.1"
   epochs: 20
+
+ml_tdt:
+  train: /path/to/data/ml-train.conllu
+  dev: /path/to/data/ml-dev.conllu
+  test: None
+  model_dir: malayalam_lemmatizer_model
+  basic: True
+  artificial: False
+  artificial_size: 5000
+  artificial_tag: t=ART
+  transducer: False
+  transducer_data: None
+  transducer_size: 10000
+  transducer_tag: t=TRANS
+  preprocess_parameters: "-src_words_min_frequency 5 -tgt_words_min_frequency 5"
+  train_parameters: "-dropout 0.1 -train_steps 2000"
+  epochs: 100
